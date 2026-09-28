@@ -59,3 +59,27 @@ SELECT
   MAX(date)                      AS last_date,
   COUNT(DISTINCT date)           AS n_days
 FROM `about-you-case-study.1_raw.1_raw_ab_test_hiring_case`;
+
+-- 4.4 -- 4.4 Null-profit check: is NULL profit the same as "no purchase"?
+-- If null_profit_with_commercial_activity = 0, NULL profit can be treated as 0.
+SELECT
+  COUNTIF(kpi_profit IS NULL) AS null_profit_rows,
+
+  COUNTIF(
+    kpi_profit IS NULL
+    AND (
+      COALESCE(kpi_gross_revenue, 0) != 0
+      OR COALESCE(kpi_net_revenue, 0) != 0
+      OR COALESCE(sum_orders, 0) != 0
+    )
+  ) AS null_profit_with_commercial_activity,
+
+  COUNTIF(
+    kpi_profit IS NULL
+    AND COALESCE(kpi_gross_revenue, 0) = 0
+    AND COALESCE(kpi_net_revenue, 0) = 0
+    AND COALESCE(sum_orders, 0) = 0
+  ) AS null_profit_without_commercial_activity,
+
+  COUNTIF(kpi_profit IS NOT NULL) AS non_null_profit_rows
+FROM `about-you-case-study.1_raw.1_raw_ab_test_hiring_case`;
