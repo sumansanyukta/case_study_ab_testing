@@ -7,7 +7,9 @@ Data Analyst (Ranking & Sorting) take-home challenge by Sanyukta Suman.
 
 ## Summary
 
-The new sort (`new_customer_sorting_v2`) increases conversion (+3.4%) and net revenue per visitor (+3.0%), but reduces contribution profit per visitor by 5.5% (95% CI: −€0.072 to −€0.017). The effect holds across all large markets and customer segments. **Recommendation: do not proceed with full rollout in the current form; iterate and re-test with profit as the primary metric.**
+The new sort (`new_customer_sorting_v2`) increases conversion (+3.4%) and net revenue per visitor (+3.0%), but reduces contribution profit per visitor by 5.5% (95% CI: −€0.072 to −€0.017). The effect holds across all large markets and customer segments. 
+
+**Recommendation: do not proceed with full rollout in the current form; iterate and re-test with profit as the primary metric.**
 
 ## Data
 
@@ -22,7 +24,7 @@ The two datasets share no join key and are analysed separately.
 
 ```
 sql/
-├── 01_exploration/      Data validation (read-only)
+├── 01_exploratory_analysis/      Data validation (read-only)
 │   ├── 01_ab_test_grain_checks.sql
 │   ├── 02_ab_test_assignment_checks.sql
 │   ├── 03_ab_test_categorical_profile.sql
