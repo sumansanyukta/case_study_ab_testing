@@ -1,3 +1,10 @@
+-- prep_ab_test_perc_diff.sql
+-- Purpose : One row per metric: control, treatment and relative lift.
+--           Rates are computed on group totals; per-visitor metrics use
+--           distinct visitors over the full period.
+-- Source  : 02_prep.prep_ab_test_hiring
+-- Output  : 02_prep.prep_ab_test_perc_diff (dashboard page 1)
+
 CREATE OR REPLACE TABLE `about-you-case-study.02_prep.prep_ab_test_perc_diff` AS 
 WITH Table1 AS (
 SELECT
