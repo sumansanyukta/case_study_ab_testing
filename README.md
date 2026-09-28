@@ -1,4 +1,4 @@
-# ABOUT YOU Case Study: Sorting A/B Test & Ranking Analysis
+# Case Study: Sorting A/B Test & Ranking Analysis
 
 Data Analyst (Ranking & Sorting) take-home challenge by Sanyukta Suman.
 
