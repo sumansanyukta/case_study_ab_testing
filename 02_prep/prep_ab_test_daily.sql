@@ -1,3 +1,9 @@
+-- prep_ab_test_daily.sql
+-- Purpose : Daily experiment table by group and segment. Visitors = visitor-days
+--           (additive across dates and filters). Prices weighted by impressions.
+-- Source  : 02_prep.prep_ab_test_hiring
+-- Output  : 02_prep.prep_ab_test_daily (daily charts and filters, pages 1 and 3)
+
 CREATE OR REPLACE TABLE `about-you-case-study.02_prep.prep_ab_test_daily` AS
 SELECT
   date,
