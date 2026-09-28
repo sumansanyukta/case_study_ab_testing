@@ -1,3 +1,9 @@
+-- prep_ranking_category.sql
+-- Purpose : Product x category table with readable bands and labels;
+--           raw values kept so Looker can sum before dividing
+-- Source  : 1_raw.01_raw_ranking_hiring_case
+-- Output  : 02_prep.prep_ranking_category (dashboard pages 2 and 4)
+
 CREATE OR REPLACE TABLE `about-you-case-study.02_prep.prep_ranking_category` AS
 SELECT
   virtual_category_id,
