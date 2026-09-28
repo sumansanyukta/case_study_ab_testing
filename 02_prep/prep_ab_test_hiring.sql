@@ -1,3 +1,9 @@
+-- prep_ab_test_hiring.sql
+-- Purpose : Clean A/B table: removes 230 visitors assigned to both groups,
+--           adds visit_day_id (visitor x day key)
+-- Source  : 1_raw.1_raw_ab_test_hiring_case
+-- Output  : 02_prep.prep_ab_test_hiring (dashboard pages 1 and 3)
+
 CREATE TABLE `about-you-case-study.02_prep.prep_ab_test_hiring` AS
 
 WITH Table1 AS (
